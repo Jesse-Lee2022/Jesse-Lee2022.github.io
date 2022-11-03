@@ -8,24 +8,34 @@
             
             if( document.ordForm.nameChoice.value.length<1 ) {
                 alert( "Fill your name" );
-                document.ordForm.nameChoice.focus() ;
                 return false;
             }
             if(( document.ordForm.ageChoice.value < 1) ||
                 (document.ordForm.ageChoice.value > 150)) {
                 alert( "Quantity must be a number from 1 - 150!" );
-                document.ordForm.qty.focus() ;
                 return false;
             }
             if (( document.ordForm.emailChoice.value.length < 4) ||
                 (document.ordForm.emailChoice.value.indexOf("@"))>
                 (document.ordForm.emailChoice.value.indexOf("."))){
                 alert( "The email filled is not real" );
-                document.ordForm.qty.focus() ;
                 return false;                  
                 }
             return true;
             }
+      var scrollPos = 0;
+      window.addEventListener('scroll',() => {
+        if (window.scrollY>scrollPos){
+          document.getElementById('header').style.opacity = .2;
+          document.getElementById('header').style.transform='translateY(-70px)';
+          scrollPos=window.scrollY
+        }
+        if (window.scrollY<scrollPos){
+          document.getElementById('header').style.opacity = 1;
+          document.getElementById('header').style.transform='translateY(0)';
+          scrollPos=window.scrollY
+        }
+      }) 
     </script>
     <link rel="stylesheet" href="pf.css">
     <link rel="faviconIcon" href="favicon (1).ico" type="image/x-icon">
