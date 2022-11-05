@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html >
 
   <head>
     <title>Jesse's Portfolio</title>
     <script>
+
       function validate() {
             
             if( document.ordForm.nameChoice.value.length<1 ) {
@@ -36,6 +37,29 @@
           scrollPos=window.scrollY
         }
       }) 
+
+      document.onkeydown = checkKey;
+
+      function checkKey(e) {
+
+          e = window.event;
+
+          if (e.keyCode == '37') {
+            alert('left')
+          }
+          else if (e.keyCode == '39') {
+            alert('right')
+          }
+          if (e.keyCode == '38') {
+            return jump()
+          }
+      }
+      function jump(){
+        document.getElementById('player').classList.add("animate");
+        setTimeout(function(){
+          document.getElementById('player').classList.remove("animate");
+        },1000);
+      }
     </script>
     <link rel="stylesheet" href="pf.css">
     <link rel="faviconIcon" href="favicon (1).ico" type="image/x-icon">
@@ -44,7 +68,7 @@
     <meta name="robots" content="noIndex, nofollow">
   </head>
   <body>
-    <header id="header" class="header">
+    <header class="header" id="header">
       <div class="left-section">
         <a class="page-anchor" href="#front-page">
           <button class="home-button">
@@ -64,11 +88,11 @@
           <div class="tooltip">My Portfolio</div>
         </button>
         <button class="resume">
-          <a class="page-anchor" href="#line-2-side">Resume</a>
+          <a class="page-anchor" href="#resume-page">Resume</a>
           <div class="tooltip">My Resume</div>
         </button>
         <button class="form">
-          <a class="page-anchor" href="#resume-page">Form</a>
+          <a class="page-anchor" href="#form-page">Form</a>
           <div class="tooltip">Fill a Form</div>
         </button>
         <button class="about">
@@ -81,26 +105,32 @@
     </header>
 
     <div id="front-page">
-      <img src="profile-pic1.png">
-      <div>
-        <p>Jesse's</p>
-        <p>Web Portfolio</p>
+      <div id="front-banner">
+        <img src="profile-pic1.png">
+        <div>
+          <p>Jesse's</p>
+          <p>Web Portfolio</p>
+        </div>        
       </div>
+    
+      <div id="minigame">
+        <img id="player" src="pizza.png">
+      </div>  
     </div>
     <div id="front-page-break"></div>
     <div class="portfolio-section" id="portfolio-page">
       <div class="title">Portfolio</div>
-      <div class="side-img">
-        <a href="https://py3.codeskulptor.org/#user307_jcZjhhx4sc_3.py">
-          <img class="side-img-one" src="parametric-tan.png">
-        </a>
-        <a href="https://py3.codeskulptor.org/#user307_R6zcZFn4RY_5.py">
-          <img class="side-img-one" src="Screenshot 2022-10-24 175945.png">
-        </a>
-        <img class="side-img-one" src="placeholder.png">
-        <img id="line-2-side" class="side-img-one" src="placeholder.png">
-        <img class="side-img-one" src="placeholder.png">
-        <img class="side-img-one" src="placeholder.png">
+      <div id="image-holder">
+        <div class="side-img">
+          <a href="https://py3.codeskulptor.org/#user307_R6zcZFn4RY_5.py">
+            <img class="side-img-one" src="Screenshot 2022-10-24 175945.png">
+          </a>
+        </div>
+        <div class="side-img" id="side-img-2">
+          <a href="https://py3.codeskulptor.org/#user307_jcZjhhx4sc_3.py">
+            <img class="side-img-one" src="parametric-tan.png">
+          </a>
+        </div>
       </div>
     </div>
 
