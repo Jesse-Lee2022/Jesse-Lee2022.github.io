@@ -7,7 +7,6 @@ body{
   margin-bottom: 100px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgb(230, 230, 230);
   
 
 }
@@ -15,7 +14,7 @@ body{
   position: fixed;
   display: flex;
   flex-direction: row;
-  height: 60px;
+  height: 90px;
   background-color: white;
   justify-content: space-between;
   left: 0;
@@ -23,6 +22,7 @@ body{
   top: 0;
   z-index: 100;
   box-shadow: 2px 2px 2px 2px rgb(201, 201, 201);
+  transition: transform .5s, opacity .5s;
 } 
 .left-section{
   display: flex;
@@ -38,24 +38,51 @@ body{
 .home-icon{
   height: 50px;
   transition: transform 5s;
-  
 }
 .home-icon:hover{
   cursor: pointer;
-  transform: translateX(1000px);
-
+  transform: translateX(1000px) translateY(1000px);
+  
 }
 #front-page{
-  height: 300px;
-  display: flex;
+  height: 400px;
   font-weight: 700;
   font-size: 50px;
-  color: rgb(36, 138, 255);
-  justify-content: space-between;
-  padding: 170px 70px 0 70px;
+  color: white;
+  padding-top: 200px;
+  background-image: url(watercol.jpg);
+  background-size: 100% 130%;
 }
-#front-page-break{
-  height: 70px;
+#front-banner{
+  padding: 0 70px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  object-fit: contain;
+  height: 70%;
+}
+#minigame{
+  width: 100%;
+  height: 30%;
+}
+#player{
+  height: 60%;
+  position: relative;
+  top: 35px;
+}
+.animate{
+  animation: jump 1000ms;
+}
+@keyframes jump{
+  0%{}
+  10%{top: 20px; left: 70px;}
+  20%{top: 0; left: 120px;} 
+  30%{top: 35px; left: 240px;}
+  40%{top: 35px; left: 280px;}
+  50%{top: 0; left: 400px;} 
+  60%{top: 35px; left: 520px;}
+  70%{top: 35px; left: 560px;}
+  80%{top: 0; left: 680px;} 
+  90%{top: 35px; left: 800px;}     
 }
 .home {
   font-family: Roboto,Arial;
@@ -89,7 +116,8 @@ body{
   background-color: white;
   border: none;
   width: 30%;
-  height: 90%;
+  height: 40%;
+  border-radius: 30%;
   transition: transform .2s;
 }
 .right-section:hover{
@@ -112,12 +140,20 @@ body{
   transform: scale(1.05);
 }
 .side-img{
+  width: 100%;
+  background-color: white;
+}
+#image-holder{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 1px;
-  row-gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 150px;
+  width: 100%;
+}
+#side-img-2{
+  padding-top: 200px;
 }
 .side-img-one{
+  margin-top: 100px;
   width: 100%;
   transition: transform .2s;
   
@@ -126,11 +162,6 @@ body{
   transform: scale(1.03);
 }
 
-@media (max-width:750px){
-  .side-img{
-    grid-template-columns: 1fr 1fr;
-  }
-}
 .funstuff{
   height: 1000px;
 }
@@ -179,24 +210,24 @@ a{
 }
 .anchors{
   color: white;
+  font-size: 30px;
   transition: font-size .2s, color .2s;
 }
 .anchors:hover{
-  font-size: 20px;
-  color: blue;
+  font-size: 35px;
+  color: gold;
 }
 .portfolio-section{
-  display: flex;
-  flex-direction: column;
-  color: white;
+  color: black;
   align-items: center;
   padding-bottom: 60px;
+  margin-top: 80px;
 }
 .title{
-  font-size: 50px;
+  font-size: 30px;
+  font-weight: 600;
   margin: 10px;
-  color: white;
-  background-color: lightblue;
+  color: black;
   width: 100%;
   text-align: center;
 }
@@ -204,9 +235,10 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightpink;
-  height: 100px;
-  color: white;
+  height: 300px;
+  color: black;
+  margin-top: 100px;
+  background-image: url("watercol.jpg");
 }
 .link-break{
   margin: 30px;
@@ -215,7 +247,7 @@ a{
   display: flex;
   flex-direction: column;
   height: 450px;
-  color: white;
+  color: black;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
@@ -232,7 +264,8 @@ a{
   font-size: 20px;
   justify-content: center;
   align-items: center;
-  background-color: rgb(175, 175, 175) ;
+  background-image: url("watercol.jpg");
+  background-position-y: -400px;
   width: 80%;
   padding: 10px;
   opacity: .6;
@@ -300,7 +333,6 @@ a{
   width: 50%;
   padding: 12px;
   border-radius: 5px;
-  background-color: azure;
   
 }
 #bottom-break{
